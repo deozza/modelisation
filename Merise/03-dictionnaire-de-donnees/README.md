@@ -1,34 +1,46 @@
 # Le dictionnaire de données
 
-Le dictionnaire de données est une première étape dans la modélisation d'un système et de sa base de données. En partant d'un cahier des charges, il permet de lister les propriétés, leurs configurations ainsi que les entités qui seront manipulées dans le système.
+## Sommaire
 
-Il n'a pas de forme normée à respecter. Cependant, on retrouve assez souvent les colonnes :
+- [Définition](#définition)
+- [Application](#application)
 
-- propriété
-  - le nom d'une propriété que le système doit gérer
-- commentaire
-  - des informations de configuration supplémentaires (format d'une date, foreign key, not null, ...)
-- entité
-  - à quelle entité cette propriété se rattache
-- type
-  - quel est le type (VARCHAR, INT, DATE, BOOLEAN, FLOAT, ...) de la propriété
-- identifiant
-  - est-ce que la propriété est une PRIMARY KEY ou non.
+## Définition
 
-Exemple :
+- inventaire exhaustif, à faire après l'expression du besoin
+- document regroupant toutes les données à manipuler dans un système
+- permet de définir ces données
+  - faire une passerelle entre le métier et la technique
+  - défition unique pour toute l'organisation
 
-| Propriété | Commentaire | Entité   | Type     | Identifiant |
-|-----------|-------------|----------|----------|-------------|
-| reference |             | produit  | VARCHAR  | X           |
-| libelle   |             | produit  | VARCHAR  |             |
-| prix      |             | produit  | FLOAT    |             |
-| identite  |             | client   | INT      | X           |
-| nom       |             | client   | VARCHAR  |             |
-| prenom    |             | client   | VARCHAR  |             |
-| adresse   |             | client   | VARCHAR  |             |
-| date      |             | commande | DATETIME |             |
-| adresse   |             | commande | VARCHAR  |             |
-| quantite  |             | commande | INT      |             |
-| identite  | FOREIGN KEY | commande | INT      |             |
-| reference | FOREIGN KEY | commande | VARCHAR  |             |
-| numero    |             | commande | INT      | X           |
+## Application
+
+- sous forme d'un tableau
+- le format n'est pas vraiment normé
+- certaines caractéristiques sont présentes de manière générale :
+  - `code mnémonique` : le libellé, le nom de la donnée
+  - `désignation` (optionnel) : description de la donnée, à quoi elle correspond
+  - `entité` (optionnel) : à quelle entité se rattache cette propriété
+  - `type` : varchar, int, ...
+  - `taille` : nombre de caractères, nombre de chiffres, ...
+  - `remarques` : d'autres caractéristiques (strictement supérieur à 0, format à respecter, ...)
+  - `contraintes` (parfois dans `remarques`) : options comme `NOT NULL`, `UNIQUE`, ...
+
+Exemple de dictionnaire :
+
+| Code mnémonique | Désignation                      | Entité  | Type    | Taille | Contraintes      | Remarques                |
+|-----------------|----------------------------------|---------|---------|--------|------------------|--------------------------|
+| reference       | Code d'identification du produit | produit | CHAR    | 50     | NOT NULL, UNIQUE |                          |
+| libelle         | Nom du produit                   | produit | VARCHAR | 255    | NOT NULL         |                          |
+| prix            | Prix hors taxe                   | produit | FLOAT   | 11,2   | NOT NULL         |                          |
+| nom             | Nom de famille                   | client  | VARCHAR | 255    | NOT NULL         |                          |
+| prenom          | Prénom principal                 | client  | VARCHAR | 255    | NOT NULL         |                          |
+| email           | Adresse email de contact         | client  | VARCHAR | 255    | NOT NULL, UNIQUE | Format email à respecter |
+
+- les données doivent être élémentaires
+  - ne doivent pas être calculées
+    - sauf si la valeur ne varie pas dans le temps
+    - exemple : pas d'âge, on stocke une date de naissance, mais prix TTC ok
+  - ne doivent pas être composées
+    - plus simple de modifier une valeur élémentaire courte qu'une valeur composée longue
+    - exemple : on ne stocke pas une adresse complète, mais un numéro de rue + le nom de la rue + ...
