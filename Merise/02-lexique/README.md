@@ -45,9 +45,6 @@ Pour faciliter la compréhension, nous ferons des analogies avec des logiciel de
   - une liste de propriétés
   - un identifiant parmi ces propriétés
 - même concept qu'une feuille de classeur dans un tableur
-- représentée sous forme d'un rectangle en modélisation
-  - en haut le nom de l'entité
-  - en bas la liste des propriétés
 
 ## Donnée
 

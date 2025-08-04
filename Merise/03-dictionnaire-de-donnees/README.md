@@ -28,14 +28,20 @@
 
 Exemple de dictionnaire :
 
-| Code mnémonique | Désignation                      | Entité  | Type    | Taille | Contraintes      | Remarques                |
-|-----------------|----------------------------------|---------|---------|--------|------------------|--------------------------|
-| reference       | Code d'identification du produit | produit | CHAR    | 50     | NOT NULL, UNIQUE |                          |
-| libelle         | Nom du produit                   | produit | VARCHAR | 255    | NOT NULL         |                          |
-| prix            | Prix hors taxe                   | produit | FLOAT   | 11,2   | NOT NULL         |                          |
-| nom             | Nom de famille                   | client  | VARCHAR | 255    | NOT NULL         |                          |
-| prenom          | Prénom principal                 | client  | VARCHAR | 255    | NOT NULL         |                          |
-| email           | Adresse email de contact         | client  | VARCHAR | 255    | NOT NULL, UNIQUE | Format email à respecter |
+| Code mnémonique    | Désignation                         | Entité   | Type    | Taille     | Contraintes            | Remarques                |
+|-----------------   |----------------------------------   |--------- |---------|--------    |------------------      |--------------------------|
+| reference          | Code d'identification du produit    | produit  | CHAR    | 50         | NOT NULL, UNIQUE       |                          |
+| libelle            | Nom du produit                      | produit  | VARCHAR | 255        | NOT NULL               |                          |
+| prix               | Prix hors taxe                      | produit  | FLOAT   | 11,2       | NOT NULL               |                          |
+| nom                | Nom de famille                      | client   | VARCHAR | 255        | NOT NULL               |                          |
+| prenom             | Prénom principal                    | client   | VARCHAR | 255        | NOT NULL               |                          |
+| email              | Adresse email de contact            | client   | VARCHAR | 255        | NOT NULL, UNIQUE       | Format email à respecter |
+| date               | Date de commande                    | commande | DATE    |            | NOT NULL, DEFAULT NOW()|                          | 
+| commande_adresse   | Adresse de livraison                | commande | VARCHAR | 255        | NOT NULL               |                          |
+| quantite           | Quantité du produit commandé        | commande | INT     | 3          | NOT NULL               | Nombre positif           |
+| produit_reference  | Référence du produit commandé       | commande | CHAR    | 50         | NOT NULL               |                          |
+| numero             | Numéro de la commande               | commande | INT     | 9          | NOT NULL, UNIQUE       |                          |
+| client             | Email de la personne qui a commandé | commande | VARCHAR | 255        | NOT NULL               |                          |
 
 - les données doivent être élémentaires
   - ne doivent pas être calculées
