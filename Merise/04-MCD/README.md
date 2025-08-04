@@ -69,4 +69,4 @@ C'est pour cela que les cardinalités sont toujours en couples (une pour chaque 
 
 Exemple de MCD :
 
-()[https://www.fsmwarden.com/developpez/Courses_Hippiques(Jockeys_etc)Merise.jpg]
+![](https://www.fsmwarden.com/developpez/Courses_Hippiques(Jockeys_etc)Merise.jpg)

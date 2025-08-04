@@ -8,6 +8,6 @@
 - les relations disparaissent, et les entités-relations deviennent des tables
 - les cardinalités sont remplacées par des flêches qui part de la table avec une foreign key
 
-Exemple de MLD :
+Exemple de MLD
 
-()[https://www.fsmwarden.com/developpez/Courses_Hippiques(Jockeys_etc)MLD(notation_R).jpg]
+![](https://www.fsmwarden.com/developpez/Courses_Hippiques(Jockeys_etc)MLD(notation_R).jpg)
