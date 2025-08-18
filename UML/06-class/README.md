@@ -1,6 +1,5 @@
-# Diagramme de séquence
+# Diagramme de classe
 
 ## Sommaire
 
 ## Présentation
-
