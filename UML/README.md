@@ -11,7 +11,9 @@
 
 Sources ayant été utilisées pour faire ce cours :
 
-- (Conception Orientée Objet - Pierre Gérard, IUT de Villetaneuse)[https://lipn.univ-paris13.fr/~gerard/uml-s2/]
-- (Modélisation UML - Christine Solnon, INSA de Lyon)[https://perso.liris.cnrs.fr/christine.solnon/coursUML.pdf]
-- (UML - GeeksForGeeks)[https://www.geeksforgeeks.org/system-design/unified-modeling-language-uml-introduction/]
-- (UML en français)[http://uml.free.fr/]
+- [Conception Orientée Objet - Pierre Gérard, IUT de Villetaneuse](https://lipn.univ-paris13.fr/~gerard/uml-s2/)
+- [Modélisation UML - Christine Solnon, INSA de Lyon](https://perso.liris.cnrs.fr/christine.solnon/coursUML.pdf)
+- [UML - GeeksForGeeks](https://www.geeksforgeeks.org/system-design/unified-modeling-language-uml-introduction/)
+- [UML en français](http://uml.free.fr/)
+- [Site officiel de l'UML](https://www.uml-diagrams.org/)
+
